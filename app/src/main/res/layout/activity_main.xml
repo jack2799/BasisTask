@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +7,39 @@
     android:clipChildren="false"
     tools:context=".activities.ContentActivity">
 
-    <link.fls.swipestack.SwipeStack
-        android:id="@+id/contentStack"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ImageButton
+        android:id="@+id/restart_imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_restore_page_24px"
+        app:layout_constraintEnd_toStartOf="@id/page_textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/page_textView"
+        app:layout_constraintTop_toTopOf="@+id/page_textView"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/page_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.90" />
+
+    <com.yuyakaido.android.cardstackview.CardStackView
+        android:id="@+id/content_cardStackView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="20dp"
+        android:clipToPadding="false"
         android:padding="20dp"
-        app:stack_rotation="0"
-        app:stack_spacing="6dp" />
-</FrameLayout>
+        app:layout_constraintBottom_toTopOf="@id/page_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></com.yuyakaido.android.cardstackview.CardStackView>
+</androidx.constraintlayout.widget.ConstraintLayout>
