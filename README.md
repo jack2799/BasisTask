@@ -6,7 +6,7 @@ An app given as a task to get the job.
 
 ## Installation
 
-Install the `app-release.apk` provided in mail.
+Download and install the [app-release.apk](https://github.com/jack2799/BasisTask/blob/master/app/release/app-release.apk).
 
 
 
